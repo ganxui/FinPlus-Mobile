@@ -1,5 +1,9 @@
 # FinPlus Mobile
 
+> **License:** source code is public for inspection and security review only.
+> Copying, redistribution, hosting, resale, rebranding, and derivative works
+> are prohibited without prior written permission. See [LICENSE](LICENSE).
+
 Официальная Android-оболочка существующего FinPlus. Она не дублирует backend или бизнес-логику: защищённый `WebView` открывает `https://finplus.su`, поэтому авторизация, API, роли, AI, наставники, маркетплейс, заказы, чаты, кошелёк и админ-панель остаются едиными с сайтом.
 
 ## Что реализовано
