@@ -1,0 +1,1 @@
+-keepclassmembers class ru.finplus.app.MainActivity$NativeBridge { public *; }

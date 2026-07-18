@@ -1,0 +1,8 @@
+<resources>
+    <style name="Theme.FinPlus" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item><item name="android:windowLightStatusBar">true</item><item name="android:statusBarColor">@color/finplus_background</item><item name="android:navigationBarColor">@color/finplus_background</item><item name="android:colorAccent">@color/finplus_primary</item><item name="android:windowActionModeOverlay">true</item>
+    </style>
+    <style name="Theme.FinPlus.Splash" parent="Theme.FinPlus">
+        <item name="android:windowBackground">@drawable/splash_background</item><item name="android:windowSplashScreenBackground">@color/finplus_background</item><item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_finplus_logo</item><item name="android:windowSplashScreenIconBackgroundColor">@color/finplus_primary</item>
+    </style>
+</resources>

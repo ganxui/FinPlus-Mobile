@@ -1,0 +1,44 @@
+plugins { id 'com.android.application' }
+
+def signingProps = new Properties()
+def signingFile = rootProject.file('keystore.properties')
+if (signingFile.exists()) signingProps.load(new FileInputStream(signingFile))
+
+android {
+    namespace 'ru.finplus.app'
+    compileSdk 36
+    buildToolsVersion '36.1.0'
+
+    defaultConfig {
+        applicationId 'ru.finplus.app'
+        minSdk 29
+        targetSdk 36
+        versionCode 1
+        versionName '1.0.0'
+        resourceConfigurations += ['ru', 'en']
+    }
+
+    signingConfigs {
+        release {
+            if (signingFile.exists()) {
+                storeFile rootProject.file(signingProps['storeFile'])
+                storePassword signingProps['storePassword']
+                keyAlias signingProps['keyAlias']
+                keyPassword signingProps['keyPassword']
+            }
+        }
+    }
+
+    buildTypes {
+        debug { applicationIdSuffix '.debug'; versionNameSuffix '-debug' }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingFile.exists() ? signingConfigs.release : signingConfigs.debug
+        }
+    }
+
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+    lint { checkReleaseBuilds false; abortOnError false }
+}
