@@ -51,13 +51,3 @@ Release-ключ создаётся один раз командой `.\scripts\
 
 Нативный канал и разрешения уже готовы. Для рабочего push нужно создать Android-приложение `ru.finplus.app` в Firebase, положить `google-services.json` в `mobile/app/`, подключить Google Services + Firebase Messaging и отправлять FCM token в отдельный защищённый endpoint backend. До добавления Firebase приложение не запрашивает и не имитирует push token.
 
-## Публикация в Google Play
-
-1. Создайте приложение в Play Console с package name `ru.finplus.app`.
-2. Заполните карточку, политику конфиденциальности, Data safety и возрастной рейтинг.
-3. Включите Play App Signing и загрузите release AAB во внутреннее тестирование.
-4. Добавьте тестовые аккаунты для проверки закрытых разделов.
-5. Проверьте pre-launch report, затем продвигайте сборку в closed/open testing и production.
-6. Для каждой следующей версии увеличивайте `versionCode`, сохраняйте тот же release-ключ и собирайте новый AAB.
-
-Перед production замените Maven-зеркало в `settings.gradle` на прямые `google()`/`mavenCentral()`, если инфраструктура имеет стабильный TLS-доступ к ним.
