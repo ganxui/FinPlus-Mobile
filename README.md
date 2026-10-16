@@ -44,13 +44,6 @@ cd mobile
 .\gradlew.bat bundleRelease
 ```
 
-Готовые файлы этой рабочей станции находятся на E:.
-
-```text
-E:\CodexWork\FinPlus\artifacts\1.0.0\FinPlus-1.0.0-debug.apk
-E:\CodexWork\FinPlus\artifacts\1.0.0\FinPlus-1.0.0-release.apk
-E:\CodexWork\FinPlus\artifacts\1.0.0\FinPlus-1.0.0-release.aab
-```
 
 Release-ключ создаётся один раз командой `.\scripts\generate-release-key.ps1`. `finplus-release.jks` и `keystore.properties` не коммитятся. Сохраните оба файла и пароль в защищённой резервной копии: без исходного ключа обновить опубликованное приложение нельзя.
 
